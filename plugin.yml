@@ -1,0 +1,24 @@
+--
+plugins:
+  steps:
+    import:
+      - ${pdcyml_settings_path_plugins}/pdc-package-manager-repository-plugin/sh/import.sh
+    confirm:
+      - pmrplugin_confirm
+    execute:
+      - pmrplugin_run_before
+      - pmrplugin_update_distro
+      - pmrplugin_install
+      - pmrplugin_install_packages
+
+package_manager_repository:
+  repository:
+  update: false
+  run_before:
+    -
+  packages:
+    path: ${pdcyml_settings_path_resources}/packages/
+    install:
+      -
+  install:
+    -
